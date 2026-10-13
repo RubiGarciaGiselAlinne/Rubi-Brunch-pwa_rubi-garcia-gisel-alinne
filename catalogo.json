@@ -1,0 +1,17 @@
+[
+  {"id":1,"nombre":"Chilaquiles rojos o verdes","categoria":"Desayunos mexicanos","precio":120,"stock":20,"imagen":"img/chilaquiles-rojos-o-verdes.png"},
+  {"id":2,"nombre":"Huevos rancheros","categoria":"Desayunos mexicanos","precio":110,"stock":20,"imagen":"img/huevos-rancheros.jpg"},
+  {"id":3,"nombre":"Molletes","categoria":"Desayunos mexicanos","precio":95,"stock":20,"imagen":"img/molletes.jpg"},
+  {"id":4,"nombre":"Omelette de espinaca","categoria":"Desayunos mexicanos","precio":115,"stock":20,"imagen":"img/omelette-de-espinaca.jpg"},
+  {"id":5,"nombre":"Machaca con huevo","categoria":"Desayunos mexicanos","precio":130,"stock":20,"imagen":"img/machaca-con-huevo.jpg"},
+  {"id":6,"nombre":"Hot cakes","categoria":"Brunch dulce y ligero","precio":95,"stock":20,"imagen":"img/hot-cakes.jpg"},
+  {"id":7,"nombre":"Pan francés","categoria":"Brunch dulce y ligero","precio":105,"stock":20,"imagen":"img/pan-frances.jpg"},
+  {"id":8,"nombre":"Avena con fruta","categoria":"Brunch dulce y ligero","precio":75,"stock":20,"imagen":"img/avena-con-fruta.jpg"},
+  {"id":9,"nombre":"Yogurt con granola","categoria":"Brunch dulce y ligero","precio":80,"stock":20,"imagen":"img/yogurt-con-granola.jpg"},
+  {"id":10,"nombre":"Bagel de salmón","categoria":"Brunch dulce y ligero","precio":145,"stock":20,"imagen":"img/bagel-de-salmon.jpg"},
+  {"id":11,"nombre":"Jugo de naranja","categoria":"Bebidas","precio":40,"stock":20,"imagen":"img/jugo-de-naranja.jpg"},
+  {"id":12,"nombre":"Café americano (refill)","categoria":"Bebidas","precio":35,"stock":20,"imagen":"img/cafe-americano-refill.jpg"},
+  {"id":13,"nombre":"Latte","categoria":"Bebidas","precio":55,"stock":20,"imagen":"img/latte.jpg"},
+  {"id":14,"nombre":"Chocolate caliente","categoria":"Bebidas","precio":50,"stock":20,"imagen":"img/chocolate-caliente.jpg"},
+  {"id":15,"nombre":"Mimosa sin alcohol","categoria":"Bebidas","precio":60,"stock":20,"imagen":"img/mimosa-sin-alcohol.jpg"}
+]
