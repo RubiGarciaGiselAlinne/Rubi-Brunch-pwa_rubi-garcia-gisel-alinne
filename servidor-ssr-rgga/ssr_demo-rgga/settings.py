@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'catalogo-rgga',  # nuestra app: la vista SSR del catálogo de ventas
 ]
 
 MIDDLEWARE = [
