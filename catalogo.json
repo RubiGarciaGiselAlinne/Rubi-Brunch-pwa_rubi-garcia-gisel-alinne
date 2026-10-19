@@ -9,7 +9,7 @@
   {"id":8,"nombre":"Avena con fruta","categoria":"Brunch dulce y ligero","precio":75,"stock":20,"imagen":"img/avena-con-fruta.jpg"},
   {"id":9,"nombre":"Yogurt con granola","categoria":"Brunch dulce y ligero","precio":80,"stock":20,"imagen":"img/yogurt-con-granola.jpg"},
   {"id":10,"nombre":"Bagel de salmón","categoria":"Brunch dulce y ligero","precio":145,"stock":20,"imagen":"img/bagel-de-salmon.jpg"},
-  {"id":11,"nombre":"Jugo de naranja","categoria":"Bebidas","precio":40,"stock":20,"imagen":"img/jugo-de-naranja.jpg"},
+  {"id":11,"nombre":"Jugo de naranja","categoria":"Bebidas","precio":40,"stock":20,"imagen":"img/Jugo-de-naranja.jpg"},
   {"id":12,"nombre":"Café americano (refill)","categoria":"Bebidas","precio":35,"stock":20,"imagen":"img/cafe-americano-refill.jpg"},
   {"id":13,"nombre":"Latte","categoria":"Bebidas","precio":55,"stock":20,"imagen":"img/latte.jpg"},
   {"id":14,"nombre":"Chocolate caliente","categoria":"Bebidas","precio":50,"stock":20,"imagen":"img/chocolate-caliente.jpg"},
