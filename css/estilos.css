@@ -1,274 +1,169 @@
-/* ===== Rubí Brunch · paleta =====
-   --rosa #E11D48 (principal) · --rosa-claro #FFE4E6 (suave) · --dorado #CA8A04 (acento) */
+/* Rubí Brunch — paleta tomada de la guía del giro:
+   rubí #E11D48 · rosa #FFE4E6 · oro #CA8A04 */
 :root {
-  --rosa: #E11D48;
-  --rosa-hover: #9F1239;
-  --rosa-oscuro: #BE123C;
-  --rosa-claro: #FFE4E6;
-  --rosa-borde: #FDA4AF;
-  --fondo: #FFF5F6;
-  --dorado: #CA8A04;
-  --dorado-texto: #A16207;   /* 4.9:1 sobre blanco (el dorado puro solo da ~3.2:1) */
-  --tinta: #4C0519;
-  --tinta-suave: #881337;
-  --sombra: 0 4px 16px rgba(225, 29, 72, .10);
-  --fuente-titulo: Georgia, "Times New Roman", serif;
+  --rubi: #e11d48;
+  --rubi-osc: #9f1239;
+  --rosa: #ffe4e6;
+  --rosa-suave: #fff5f5;
+  --oro: #ca8a04;
+  --tinta: #3b1620;
+  --tinta-suave: #7a5560;
+  --linea: #f3cfd5;
+  --blanco: #fff;
+  --serif: "Georgia", "Iowan Old Style", "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
 }
+*, *::before, *::after { box-sizing: inherit; }
 
-* { box-sizing: border-box; }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --rosa-suave: #2a1117;
+    --rosa: #4a1a26;
+    --tinta: #ffeef0;
+    --tinta-suave: #d9a9b3;
+    --linea: #5c2331;
+    --blanco: #34161e;
+  }
+}
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  line-height: 1.5;
-  background: var(--fondo);
+  font-family: var(--sans);
   color: var(--tinta);
+  background: var(--rosa-suave);
+  line-height: 1.5;
 }
 
-/* ===== Encabezado (se queda fijo arriba al hacer scroll) ===== */
+/* ---------- Barra superior ---------- */
 .appbar {
-  position: sticky;
-  top: 0;
-  z-index: 1100;
-  background: linear-gradient(135deg, var(--rosa) 0%, var(--rosa-oscuro) 100%);
-  color: white;
-  padding: .9rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 4px solid var(--dorado);
-  box-shadow: 0 4px 14px rgba(159, 18, 57, .30);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .75rem 1rem;
+  background: linear-gradient(135deg, var(--rubi), var(--rubi-osc));
+  color: #fff;
 }
-
-.appbar h1 {
-  margin: 0;
-  font-family: var(--fuente-titulo);
-  font-size: 1.7rem;
-  letter-spacing: .5px;
-  display: flex;
-  align-items: center;
-  gap: .75rem;
+.marca {
+  display: flex; align-items: center; gap: .6rem; margin: 0;
+  font: 700 1.6rem/1 var(--serif); letter-spacing: .01em;
 }
-.marca__logo {
-  height: 56px;
-  width: auto;
-  background: white;
-  padding: 4px;
-  border-radius: 14px;
-  box-shadow: 0 0 0 2px var(--dorado);   /* aro dorado alrededor del logo */
-}
-
-/* .pill: la "píldora" que muestra si hay conexión o no (la mueve app.js) */
+.marca__logo { border-radius: 12px; background: var(--rosa); }
 .pill {
-  background: rgba(76, 5, 25, .45);
-  border-radius: 999px;
-  padding: .3rem .85rem;
-  font-size: .8rem;
+  font-size: .8rem; padding: .25rem .75rem; border-radius: 999px;
+  background: rgba(0,0,0,.25); border: 1px solid rgba(255,255,255,.5);
 }
-/* Sin conexión: dorado con texto oscuro (el blanco sobre dorado no cumple WCAG) */
-.pill.sin-conexion { background: var(--dorado); color: #2a1500; font-weight: 600; }
+.pill.sin-conexion { background: var(--oro); border-color: var(--oro); }
 
-/* ===== Contenido ===== */
-main {
-  max-width: 960px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+/* ---------- Layout ---------- */
+main { max-width: 1000px; margin: 0 auto; padding: 1rem; display: grid; gap: 1.25rem; }
+main > section {
+  background: var(--blanco); border: 1px solid var(--linea);
+  border-radius: 16px; padding: 1.25rem;
 }
+h2 { margin: 0 0 .75rem; font: 700 1.5rem/1.2 var(--serif); }
+h2::after { content: ""; display: block; width: 44px; height: 3px; margin-top: .4rem; background: var(--oro); border-radius: 2px; }
 
-section {
-  background: white;
-  border: 1px solid var(--rosa-claro);
-  border-radius: 16px;
-  padding: 1.25rem 1.5rem 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: var(--sombra);
+/* ---------- Platillo especial ---------- */
+main > section.estrella {
+  display: grid; grid-template-columns: 220px 1fr; gap: 1.25rem; align-items: center;
+  background: linear-gradient(135deg, var(--rubi), var(--rubi-osc));
+  border: 0; color: #fff;
 }
+.estrella__foto { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; background: var(--rosa); }
+.estrella h2 { color: #fff; margin: .5rem 0; }
+.estrella p { margin: 0 0 .9rem; max-width: 52ch; }
+.estrella__pie { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.estrella__precio { font: 700 1.6rem var(--serif); }
+@media (max-width: 560px) { main > section.estrella { grid-template-columns: 1fr; } }
 
-/* Títulos de sección con subrayado dorado */
-section h2 {
-  font-family: var(--fuente-titulo);
-  font-size: 1.5rem;
-  margin: 0 0 1.1rem;
-  padding-bottom: .35rem;
-  display: inline-block;
-  border-bottom: 3px solid var(--dorado);
+/* ---------- Filtros por categoría ---------- */
+.filtros {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; gap: .5rem; overflow-x: auto;
+  padding: .6rem 0; margin-bottom: .5rem;
+  background: var(--blanco);
+  scrollbar-width: none;
 }
-
-/* .grid: acomoda las tarjetas de producto en columnas que se ajustan solas */
-.grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.filtros::-webkit-scrollbar { display: none; }
+.chip {
+  flex: none; display: inline-flex; align-items: center; gap: .4rem;
+  padding: .5rem .9rem; border-radius: 999px; cursor: pointer;
+  font: 600 .9rem var(--sans); color: var(--rubi-osc);
+  background: var(--rosa); border: 1.5px solid transparent;
+  transition: background .2s, color .2s;
 }
+.chip small { font-weight: 700; opacity: .7; }
+.chip[aria-pressed="true"] { background: var(--rubi); color: #fff; }
+.chip[aria-pressed="true"] small { opacity: .9; }
 
-/* ===== Tarjetas de producto ===== */
+/* ---------- Catálogo ---------- */
+.grupo + .grupo { margin-top: 1.5rem; }
+.grupo__titulo {
+  margin: 0 0 .75rem; padding-bottom: .4rem;
+  font: 700 1.15rem var(--serif); color: var(--rubi);
+  border-bottom: 1.5px dotted var(--linea);
+}
+.grid { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+#catalogo { min-height: 420px; } /* evita saltos de diseño (CLS) */
+
 .producto {
-  border: 1px solid var(--rosa-claro);
-  border-radius: 14px;
-  padding: .85rem;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  transition: border-color .2s, box-shadow .2s, transform .2s;
+  display: flex; flex-direction: column; gap: .35rem;
+  padding: .9rem; border-radius: 14px;
+  background: var(--rosa-suave); border: 1px solid var(--linea);
 }
-.producto:hover {
-  border-color: var(--dorado);
-  box-shadow: 0 8px 20px rgba(202, 138, 4, .22);
-  transform: translateY(-3px);
-}
+.producto h4 { margin: 0; font: 700 1rem/1.25 var(--serif); }
+.producto__desc { margin: 0; font-size: .85rem; color: var(--tinta-suave); flex: 1; }
 .producto__foto {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: .75rem;
-  background: var(--rosa-claro);
+  display: grid; place-items: center; width: 100%; height: 130px; font-size: 2.6rem;
+  object-fit: cover; border-radius: 10px; background: var(--rosa);
 }
-.producto strong {
-  display: block;
-  margin-bottom: .25rem;
-  font-family: var(--fuente-titulo);
-  font-size: 1.05rem;
+.producto__pie { display: flex; align-items: center; justify-content: space-between; margin-top: .4rem; }
+.precio { font-weight: 800; color: var(--rubi-osc); font-size: 1.1rem; }
+.producto--estrella { border: 2px solid var(--oro); background: var(--blanco); }
+.insignia {
+  align-self: flex-start; font-size: .72rem; font-weight: 700;
+  padding: .1rem .55rem; border-radius: 999px; background: #fef3c7; color: #854d0e;
 }
-.producto .precio {
-  color: var(--dorado-texto);
-  font-weight: bold;
-  font-size: 1.2rem;
+.producto--cargando .producto__foto { background: linear-gradient(90deg, var(--rosa), var(--rosa-suave), var(--rosa)); }
+
+/* ---------- Botones ---------- */
+button { font: inherit; }
+.producto button, #btn-sincronizar, #btn-notificar, #btn-ubicacion {
+  padding: .5rem 1rem; border: 0; border-radius: 10px; cursor: pointer;
+  background: var(--rubi); color: #fff; font-weight: 700;
 }
-.producto p { color: var(--tinta-suave); font-size: .9rem; margin: .4rem 0 .8rem; }
-.producto button { width: 100%; margin-top: auto; }
+.producto button:hover, #btn-sincronizar:hover, #btn-notificar:hover, #btn-ubicacion:hover { background: var(--rubi-osc); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+:focus-visible { outline: 3px solid var(--oro); outline-offset: 2px; }
 
-/* Tarjetas esqueleto (ver index.html): ocupan el mismo espacio que las reales
-   mientras llega catalogo.json, así nada se mueve de lugar (CLS ≈ 0) */
-.producto--cargando strong,
-.producto--cargando .precio,
-.producto--cargando p {
-  background: var(--rosa-claro);
-  border-radius: 4px;
-  color: transparent;
-}
-.producto--cargando strong { width: 70%; }
-.producto--cargando .precio { display: inline-block; width: 30%; }
-.producto--cargando p { width: 45%; }
-.producto--cargando button { visibility: hidden; }
-
-/* ===== Botones ===== */
-button {
-  background: var(--rosa);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: .6rem 1.1rem;
-  cursor: pointer;
-  font-size: .9rem;
-  font-weight: 600;
-  transition: background .15s, transform .1s;
-}
-button:hover { background: var(--rosa-hover); }
-button:active { transform: scale(.97); }
-button:disabled { opacity: .6; cursor: not-allowed; }
-
-/* Foco visible dorado para navegación con teclado */
-button:focus-visible,
-a:focus-visible {
-  outline: 3px solid var(--dorado);
-  outline-offset: 2px;
-}
-
-.mensaje { color: var(--tinta-suave); font-size: .9rem; min-height: 1.2em; }
-.mensaje a { color: var(--rosa); }
-
-.sucursal-info { color: var(--tinta-suave); font-size: .95rem; margin: 0 0 .8rem; }
-
-/* .mapa: contenedor de Leaflet. Necesita una altura explícita en px/rem;
-   si se deja en 0 o "auto", Leaflet no tiene dónde dibujar los tiles. */
-.mapa {
-  height: 280px;
-  border-radius: 12px;
-  margin-top: .75rem;
-  border: 2px solid var(--rosa-claro);
-}
-
-/* ===== Carrito ===== */
-#carrito-lista { list-style: none; padding: 0; margin: 0 0 .5rem; }
+/* ---------- Carrito y mensajes ---------- */
+#carrito-lista { list-style: none; margin: 0 0 .75rem; padding: 0; }
 #carrito-lista li {
-  display: grid;
-  grid-template-columns: 1fr auto auto auto;
-  align-items: center;
-  gap: .75rem;
-  border-bottom: 1px solid var(--rosa-claro);
-  padding: .65rem 0;
+  display: grid; grid-template-columns: 1fr auto 4.5rem auto; align-items: center; gap: .75rem;
+  padding: .6rem 0; border-bottom: 1px dotted var(--linea);
 }
-
-.carrito-nombre { font-weight: 600; }
-
-.carrito-cantidad {
-  display: flex;
-  align-items: center;
-  gap: .4rem;
-}
+.carrito-nombre { font-family: var(--serif); font-weight: 700; }
+.carrito-cantidad { display: inline-flex; align-items: center; gap: .5rem; }
 .carrito-cantidad button {
-  padding: .1rem .6rem;
-  font-size: 1rem;
-  line-height: 1.4;
-  border-radius: 8px;
+  width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--rubi);
+  background: transparent; color: var(--rubi); font-weight: 700; cursor: pointer;
 }
-.carrito-cantidad__valor {
-  min-width: 1.4rem;
-  text-align: center;
-  font-variant-numeric: tabular-nums;
-}
+.carrito-cantidad button:hover { background: var(--rubi); color: #fff; }
+.carrito-cantidad__valor { min-width: 1.5ch; text-align: center; font-weight: 700; }
+.carrito-precio { text-align: right; font-weight: 800; color: var(--rubi-osc); }
+.carrito-quitar { background: none; border: 0; color: var(--tinta-suave); text-decoration: underline; cursor: pointer; font-size: .85rem; }
+.mensaje { min-height: 1.4em; color: var(--tinta-suave); font-size: .9rem; }
+.sucursal-info { margin-top: 0; }
 
-.carrito-precio { font-weight: bold; color: var(--dorado-texto); white-space: nowrap; }
+/* ---------- Mapa ---------- */
+.mapa { height: 320px; margin-top: .75rem; border-radius: 12px; overflow: hidden; }
 
-.carrito-quitar {
-  background: transparent;
-  color: var(--rosa-hover);
-  border: 1px solid var(--rosa-borde);
-  padding: .25rem .6rem;
-  font-size: .8rem;
-}
-.carrito-quitar:hover { background: var(--rosa-claro); color: var(--tinta); }
+/* ---------- Pie ---------- */
+.pie { text-align: center; padding: 1.5rem 1rem 2rem; color: var(--tinta-suave); font-size: .85rem; }
 
-/* Total del carrito destacado */
-#carrito-lista + p {
-  font-family: var(--fuente-titulo);
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-align: right;
-  margin: .75rem 0 1rem;
-  padding-top: .5rem;
-  border-top: 2px solid var(--dorado);
-}
-
-/* ===== Pie de página ===== */
-.pie {
-  background: linear-gradient(135deg, var(--rosa) 0%, var(--rosa-oscuro) 100%);
-  color: white;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  margin-top: 2.5rem;
-  border-top: 4px solid var(--dorado);
-  font-size: .9rem;
-}
-.pie p { margin: 0; }
-
-/* ===== Móvil ===== */
 @media (max-width: 480px) {
-  .appbar { padding: .75rem 1rem; }
-  .appbar h1 { font-size: 1.3rem; gap: .5rem; }
-  .marca__logo { height: 44px; }
-  section { padding: 1rem; }
-  #carrito-lista li { grid-template-columns: 1fr auto; grid-template-areas: "nombre nombre" "cantidad precio" "quitar quitar"; }
-  .carrito-nombre { grid-area: nombre; }
-  .carrito-cantidad { grid-area: cantidad; }
-  .carrito-precio { grid-area: precio; justify-self: end; }
-  .carrito-quitar { grid-area: quitar; justify-self: start; }
+  .grid { grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .producto__foto { height: 95px; font-size: 2rem; }
+  #carrito-lista li { grid-template-columns: 1fr auto; }
+  .marca { font-size: 1.3rem; }
 }
-
-/* Respeta a quien prefiere menos animaciones */
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
-  .producto:hover { transform: none; }
-}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

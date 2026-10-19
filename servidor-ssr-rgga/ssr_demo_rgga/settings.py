@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'catalogo-rgga',  # nuestra app: la vista SSR del catálogo de ventas
+    'catalogo_rgga',  # nuestra app: la vista SSR del catálogo de ventas
 ]
 
 MIDDLEWARE = [
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ssr_demo.urls'
+ROOT_URLCONF = 'ssr_demo_rgga.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ssr_demo.wsgi.application'
+WSGI_APPLICATION = 'ssr_demo_rgga.wsgi.application'
 
 
 # Database

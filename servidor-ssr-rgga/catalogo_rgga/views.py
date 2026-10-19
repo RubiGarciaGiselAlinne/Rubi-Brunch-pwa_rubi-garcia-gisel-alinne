@@ -5,10 +5,23 @@ from django.shortcuts import render
 # pero para ENTENDER qué es SSR no necesitamos base de datos: lo importante
 # es que estos datos se insertan en el HTML *antes* de enviarlo al navegador.
 PRODUCTOS = [
-    {"nombre": "Playera UT Hermosillo", "precio": 250, "stock": 40},
-    {"nombre": "Sudadera TIC", "precio": 480, "stock": 15},
-    {"nombre": "Taza PWA", "precio": 120, "stock": 60},
-    {"nombre": "Mochila 10mo cuatrimestre", "precio": 690, "stock": 8},
+    
+{"id":1,"nombre":"Chilaquiles rojos o verdes","categoria":"Desayunos mexicanos","precio":120},
+{"id":2,"nombre":"Huevos rancheros","categoria":"Desayunos mexicanos","precio":110},
+{"id":3,"nombre":"Molletes","categoria":"Desayunos mexicanos","precio":95},
+{"id":4,"nombre":"Omelette de espinaca","categoria":"Desayunos mexicanos","precio":115},
+{"id":5,"nombre":"Machaca con huevo","categoria":"Desayunos mexicanos","precio":130},
+{"id":6,"nombre":"Hot cakes","categoria":"Brunch dulce y ligero","precio":95},
+{"id":7,"nombre":"Pan francés","categoria":"Brunch dulce y ligero","precio":105},
+{"id":8,"nombre":"Avena con fruta","categoria":"Brunch dulce y ligero","precio":75},
+{"id":9,"nombre":"Yogurt con granola","categoria":"Brunch dulce y ligero","precio":80},
+{"id":10,"nombre":"Bagel de salmón","categoria":"Brunch dulce y ligero","precio":145},
+{"id":11,"nombre":"Jugo de naranja","categoria":"Bebidas","precio":40},
+{"id":12,"nombre":"Café americano (refill)","categoria":"Bebidas","precio":35},
+{"id":13,"nombre":"Latte","categoria":"Bebidas","precio":55},
+{"id":14,"nombre":"Chocolate caliente","categoria":"Bebidas","precio":50},
+{"id":15,"nombre":"Mimosa sin alcohol","categoria":"Bebidas","precio":60}
+
 ]
 
 
