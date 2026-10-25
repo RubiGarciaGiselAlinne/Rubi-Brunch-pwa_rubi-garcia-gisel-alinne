@@ -8,9 +8,9 @@
 // Universidad Tecnológica de Hermosillo (UTH), tomadas directamente del
 // enlace "Compartir → Insertar un mapa" de Google Maps para ese lugar.
 const SUCURSAL = {
-  nombre: "Universidad Tecnológica de Hermosillo (UTH)",
-  lat: 29.00921146687666,
-  lon: -110.90377522502918,
+  nombre: "Rubí Brunch",
+  lat: 29.001871,
+  lon: -110.934394,
 };
 
 // Fórmula de Haversine: distancia en línea recta (km) entre dos puntos.

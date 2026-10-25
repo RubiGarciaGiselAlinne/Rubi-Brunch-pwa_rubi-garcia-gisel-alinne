@@ -10,8 +10,8 @@
   "categories": ["shopping", "education"],
   "background_color": "#FFF5F6",
   "theme_color": "#E11D48",
-  "icons": [
-     {
+   "icons": [
+    {
       "src": "icons/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
