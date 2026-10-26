@@ -28,6 +28,15 @@ function agregarAlCarrito(producto) {
 
   guardarCarrito(carrito);
   pintarCarrito();
+  // NUEVO: aviso flotante al agregar (usa mostrarAviso() de app.js)
+  if (typeof mostrarAviso === "function") {
+    mostrarAviso(producto.nombre + " agregado al carrito", "online", 2);
+  }
+  // NUEVO: notificación del sistema (la de la esquina de la pantalla), definida en
+  // notificaciones.js. Solo aparece si el usuario ya activó las notificaciones.
+  if (typeof mostrarNotificacionSistema === "function") {
+    mostrarNotificacionSistema("Pedido agregado", producto.nombre + " se agregó a tu carrito.");
+  }
 }
 
 // Sube o baja la cantidad de un producto ya en el carrito con los botones +/-;
@@ -98,17 +107,27 @@ function manejarClicCarrito(evento) {
 
 // "Sincronizar": en una app real esto haría un fetch() con method: "POST" al
 // servidor. Aquí lo simulamos para enseñar el patrón offline -> online.
-function sincronizarCarrito() {
+// NUEVO: recibe "evento" para saber si la llamó el botón (click) o el navegador (online)
+function sincronizarCarrito(evento) {
   const mensaje = document.getElementById("carrito-mensaje");
+  const desdeBoton = evento && evento.type === "click";
 
   if (!navigator.onLine) {
     // navigator.onLine: propiedad del navegador que dice si hay conexión
     mensaje.textContent = "Sin conexión: el carrito se sincronizará cuando vuelva el internet.";
+    // NUEVO: aviso flotante dorado
+    if (desdeBoton && typeof mostrarAviso === "function") {
+      mostrarAviso("Sin conexión: se sincronizará al volver", "offline", 4);
+    }
     return;
   }
 
   // Aquí iría: fetch("https://mi-api.com/carrito", { method: "POST", body: ... })
   mensaje.textContent = "Carrito sincronizado con el servidor (simulado). ✓";
+  // NUEVO: aviso flotante rubí
+  if (desdeBoton && typeof mostrarAviso === "function") {
+    mostrarAviso("Carrito sincronizado ✓", "online", 3);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {

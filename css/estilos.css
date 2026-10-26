@@ -157,6 +157,27 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 /* ---------- Mapa ---------- */
 .mapa { height: 320px; margin-top: .75rem; border-radius: 12px; overflow: hidden; }
 
+/* ---------- Aviso flotante de conexión ---------- */
+.aviso {
+  position: fixed; left: 50%; z-index: 2000;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  display: flex; align-items: center; gap: .6rem;
+  padding: .7rem 1.2rem .7rem .8rem; border-radius: 999px;
+  color: #fff; font-weight: 700; box-shadow: 0 6px 20px rgba(0,0,0,.3);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translate(-50%, 20px);
+  transition: opacity .25s, transform .25s, visibility .25s;
+}
+.aviso--visible { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.aviso::before {
+  display: grid; place-items: center; width: 1.6rem; height: 1.6rem;
+  border-radius: 50%; background: #fff; font-weight: 800;
+}
+.aviso--offline { background: var(--oro); color: #3b1620; }
+.aviso--offline::before { content: "!"; background: #3b1620; color: var(--oro); }
+.aviso--online { background: var(--rubi); }
+.aviso--online::before { content: "✓"; color: var(--rubi); }
+
 /* ---------- Pie ---------- */
 .pie { text-align: center; padding: 1.5rem 1rem 2rem; color: var(--tinta-suave); font-size: .85rem; }
 
