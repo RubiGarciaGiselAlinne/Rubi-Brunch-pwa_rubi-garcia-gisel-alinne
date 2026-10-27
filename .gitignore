@@ -1,8 +1,8 @@
 # Entorno virtual de Python
-/servidor-ssr-RGWJ/venv/
+/servidor-ssr-rgga/venv/
 
 # Base de datos local de Django
-/servidor-ssr-RGWJ/db.sqlite3
+/servidor-ssr-rgga/db.sqlite3
 
 # Archivos temporales de Python
 __pycache__/
