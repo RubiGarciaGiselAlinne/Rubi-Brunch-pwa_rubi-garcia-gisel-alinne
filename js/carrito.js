@@ -2,7 +2,7 @@
 // Aquí usamos localStorage: una caja de guardado que vive DENTRO del navegador
 // y sobrevive aunque cierres la pestaña o se vaya el internet.
 
-const CLAVE_CARRITO = "tienda-escolar-carrito";
+const CLAVE_CARRITO = "rubi-brunch-carrito";
 
 // Lee el carrito guardado en localStorage (si no hay nada, regresa un array vacío)
 function leerCarrito() {
