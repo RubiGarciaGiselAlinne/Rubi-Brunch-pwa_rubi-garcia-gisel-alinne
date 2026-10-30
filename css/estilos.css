@@ -38,7 +38,7 @@ body {
 /* ---------- Barra superior ---------- */
 .appbar {
   display: flex; align-items: center; justify-content: space-between;
-  padding: .75rem 1rem;
+  padding: calc(.75rem + env(safe-area-inset-top, 0px)) 1rem .75rem;
   background: linear-gradient(135deg, var(--rubi), var(--rubi-osc));
   color: #fff;
 }
@@ -54,10 +54,11 @@ body {
 .pill.sin-conexion { background: var(--oro); border-color: var(--oro); }
 
 /* ---------- Layout ---------- */
-main { max-width: 1000px; margin: 0 auto; padding: 1rem; display: grid; gap: 1.25rem; }
+main { max-width: 1000px; margin: 0 auto; padding: 1rem; display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr); }
 main > section {
   background: var(--blanco); border: 1px solid var(--linea);
   border-radius: 16px; padding: 1.25rem;
+  min-width: 0;
 }
 h2 { margin: 0 0 .75rem; font: 700 1.5rem/1.2 var(--serif); }
 h2::after { content: ""; display: block; width: 44px; height: 3px; margin-top: .4rem; background: var(--oro); border-radius: 2px; }
