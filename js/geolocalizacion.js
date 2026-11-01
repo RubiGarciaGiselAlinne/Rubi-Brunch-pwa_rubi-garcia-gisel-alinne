@@ -9,8 +9,9 @@
 // enlace "Compartir → Insertar un mapa" de Google Maps para ese lugar.
 const SUCURSAL = {
   nombre: "Rubí Brunch",
-  lat: 29.001871,
-  lon: -110.934394,
+  lat: 29.103248,
+  lon: -110.938342
+,
 };
 
 // Fórmula de Haversine: distancia en línea recta (km) entre dos puntos.
